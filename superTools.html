@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="style.css" title="Basic" />
+  <title>Blast</title>
+
+</head>
+
+<body>
+  <div class="demo">
+    <p>
+      Select a .docx file: <input id="document" accept=".doc,.docx" type="file">
+    </p>
+    <span>可以切换文件但是不能两次上传同一份文件,如有问题刷新页面</span>
+    <h4>Invincible Function</h4>
+    <button id="InvincibleShow">样式</button>
+    <div id="box">
+      <div>
+        <h4>正文设置</h4>
+        <input type="name" id="className" style="width: 80px;display: none;" />
+        <ul id="box_ul" class="box_ul">
+          <li>字体颜色<input id="color" type="color" /> </li>
+          <li>字体大小<input type="text" style="width: 80px;" /></li>
+          <li>首行缩进<input type="text" style="width: 80px;" /></li>
+          <li>字间距<input type="text" style="width: 80px;" /></li>
+        </ul>
+        <button id="huoqu">使用样式</button>
+      </div>
+      <div>
+        <h4>表格设置</h4>
+        <ul>
+          <li>字体颜色<input id="color" type="color" /></li>
+        </ul>
+      </div>
+      <div></div>
+    </div>
+    <h4>Output</h4>
+    <div id="tab">
+      <div id="tab_header">
+        <ul>
+          <li id="header_one">样式预览</li>
+          <li id="header_two">代码复制<button id="copy" class="copy" data-clipboard-action="copy"
+              data-clipboard-target="#output_code">一键复制</button></button></li>
+          <li id="header_three">代码样式<button id="copyStyle" class="copyStyle" data-clipboard-action="copy"
+              data-clipboard-target="#output_code">一键复制</button></button></li>
+        </ul>
+      </div>
+      <div id="tab_content">
+        <div id="output">
+        </div>
+        <div id="output_code">
+        </div>
+        <div id="output_style">
+        </div>
+        <div id="output_null">暂无数据</div>
+      </div>
+    </div>
+  </div>
+  <!-- <script src="https://cdn.bootcss.com/mammoth/1.4.8/mammoth.browser.js"></script> -->
+  <script src="https://cdn.bootcdn.net/ajax/libs/mammoth/1.4.17/mammoth.browser.js"></script>
+  <script src="demo.js"></script>
+</body>
+
+<script type="text/javascript">
+</script>
+
+</html>
