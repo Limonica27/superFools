@@ -18,6 +18,14 @@
   color: #000;
   list-style: none;
 }
+.box_ul_one{
+  margin: 0;
+  padding: 0;
+}
+.box_ul_one li{
+  color: #000;
+  list-style: none;
+}
 #tab{
   width: 100%;
   border: solid 1px #409eff;

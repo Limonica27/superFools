@@ -40,11 +40,6 @@
   let output_style = document.getElementById("output_style")
   let output_null = document.getElementById("output_null")
 
-  // document.getElementById('removeFile').addEventListener('click', function () {
-  //   let obj = document.getElementById('document');
-  //   obj.outerHTML = obj.outerHTML;
-  // })
-
   document.getElementById('copy').addEventListener('click', function () {
     var clipboard = new ClipboardJS('#copy')
     clipboard.on('success', function (e) {
@@ -141,7 +136,6 @@
   }
 
   function handleFileSelect(event) {
-    console.log('4564')
     readFileInputEventAsArrayBuffer(event, function (arrayBuffer) {
       mammoth.convertToHtml({ arrayBuffer: arrayBuffer })
         .then(displayResult)
