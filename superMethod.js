@@ -47,12 +47,15 @@
 
   document.getElementById('copy').addEventListener('click', function () {
     var clipboard = new ClipboardJS('#copy')
-    // 显示用户反馈/捕获复制/剪切操作后选择的内容
     clipboard.on('success', function (e) {
-      // console.info('Action:', e.action)//触发的动作/如：copy,cut等
-      // console.info('Text:', e.text);//触发的文本
-      // console.info('Trigger:', e.trigger);//触发的DOm元素
       e.clearSelection();//清除选中样式（蓝色）
+    })
+
+  })
+  document.getElementById('copyStyle').addEventListener('click', function () {
+    var clipboard = new ClipboardJS('#copyStyle')
+    clipboard.on('success', function (e) {
+      e.clearSelection();
     })
 
   })
@@ -150,10 +153,10 @@
   function displayResult(result) {
     let html = result.value;
     let newHTML = html.replace(/&/g, '')
-      .replace(/<table>/g, `<table style="border-collapse: collapse;">`)
+      .replace(/<table>/g, `<table style="border-collapse: collapse;width:100%;">`)
       .replace(/<tr>/g, `<tr style="height: 30px;">`)
       .replace(/<td>/g, `<td style="border: 1px solid #000;">`)
-      .replace(/<p>/g, `<p class='${pname ? `.${pname}` : 'text'}'>`);
+      .replace(/<p>/g, `<p class='${pname ? `.${pname}` : 'text'}'>`)
     OutputTab();
     text = newHTML
     initBox()
