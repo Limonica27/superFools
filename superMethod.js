@@ -59,6 +59,7 @@
     let lione = document.getElementById('box_ul').getElementsByTagName('input')
     pname = document.getElementById('className').value
     arr = ['margin-bottom: 0.426667rem']
+
     for (var i = 0; i < lione.length; i++) {
       switch (i) {
         case 0:
@@ -76,14 +77,35 @@
       }
     }
     let cssStyle = arr.join(';')
-    editStyle(cssStyle, pname)
+    editStyle(cssStyle, 'text')
+  })
+
+  document.getElementById('huoquTable').addEventListener('click', function () {
+    let litwo = document.getElementById('box_ul_one').getElementsByTagName('input')
+    tableArr = []
+    for (var k = 0; k < litwo.length; k++) {
+      switch (k) {
+        case 0:
+          tableArr.push(`color:${litwo[k].value ? litwo[k].value : 0}`)
+          break
+        case 1:
+          tableArr.push(`font-size:${litwo[k].value ? litwo[k].value : 14}px`)
+          break
+        case 2:
+          tableArr.push(`border:1px solid ${litwo[k].value ? litwo[k].value : 0}`)
+          break
+      }
+    }
+    console.log(tableArr);
+    let cssTableArr = tableArr.join(';')
+    editStyle(cssTableArr, 'table')
   })
 
   //设置列表的一些样式
   function editStyle(i, pname = 'text') {
     var style = document.createElement('style');
     style.type = 'text/css';
-    style.innerHTML = ` ${pname ? `.${pname}` : '.text'}{${i}}`;
+    style.innerHTML = `.${pname}{${i}}`;
     output_style.innerText = style.innerHTML
     document.getElementsByTagName('head').item(0).appendChild(style);
   }
@@ -148,8 +170,8 @@
     let html = result.value;
     let newHTML = html.replace(/&/g, '')
       .replace(/<table>/g, `<table style="border-collapse: collapse;width:100%;">`)
-      .replace(/<tr>/g, `<tr style="height: 30px;">`)
-      .replace(/<td>/g, `<td style="border: 1px solid #000;">`)
+      .replace(/<tr>/g, `<tr>`)
+      .replace(/<td>/g, `<td class="table">`)
       .replace(/<p>/g, `<p class='${pname ? `.${pname}` : 'text'}'>`)
     OutputTab();
     text = newHTML

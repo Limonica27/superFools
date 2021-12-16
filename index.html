@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.8/clipboard.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" type="text/css" href="style.css" title="Basic" />
@@ -16,7 +16,11 @@
     <p>
       Select a .docx file: <input id="document" accept=".doc,.docx" type="file">
     </p>
-    <span>可以切换文件但是不能两次上传同一份文件,如有问题刷新页面</span>
+    <span class="bac">可以切换文件但是不能两次上传同一份文件,如有问题刷新页面</span>
+    <br />
+    <span class="bac">此功能可以解析word中的文字，表格，加粗字体，斜体，无法解析字体大小、颜色图片等等</span>
+    <br />
+    <span class="bac">样式代码只会展示上一次点击的样式</span>
     <h4>Invincible Function</h4>
     <button id="InvincibleShow">样式</button>
     <div id="box">
@@ -35,7 +39,10 @@
         <h4>表格设置</h4>
         <ul id="box_ul_one" class="box_ul_one">
           <li>字体颜色<input id="color" type="color" /></li>
+          <li>字体大小<input type="text" style="width: 80px;" /></li>
+          <li>边框颜色<input id="color" type="color" style="width: 80px;" /></li>
         </ul>
+        <button id="huoquTable">使用表格样式</button>
       </div>
       <div></div>
     </div>
